@@ -489,7 +489,10 @@
       // escape double quotes
       var sanitizedLabelHtml = label.replace(/"/g, '&quot;');
 
-      var $newSelect = $('<input type="text" class="select-dropdown" readonly="true" ' + (($select.is(':disabled')) ? 'disabled' : '') + ' data-activates="select-options-' + uniqueID +'" value="'+ sanitizedLabelHtml +'"/>');
+      // check if ellipsis attribute is used
+      var ellipsis = $select.attr("ellipsis") !== undefined ;
+
+      var $newSelect = $('<input type="text" class="select-dropdown" readonly="true" '+ ( ellipsis ? ' style="text-overflow:ellipsis" ' : '' ) +  (($select.is(':disabled')) ? 'disabled' : '') + ' data-activates="select-options-' + uniqueID +'" value="'+ sanitizedLabelHtml +'"/>');
       $select.before($newSelect);
       $newSelect.before(dropdownIcon);
 
