@@ -522,6 +522,13 @@
         },
         'click': function (e){
           e.stopPropagation();
+        },
+        'open': function(e){
+          //scroll to first selected position
+            var option = options.find("li.active")[0];
+            if(option){
+              options.scrollTo(option);
+            }
         }
       });
 
@@ -554,13 +561,12 @@
         });
       }
 
-      // Make option as selected and scroll to selected position
+      // Make option as selected
       var activateOption = function(collection, newOption) {
         if (newOption) {
           collection.find('li.selected').removeClass('selected');
           var option = $(newOption);
           option.addClass('selected');
-          options.scrollTo(option);
         }
       };
 
