@@ -396,7 +396,7 @@
           valuesSelected = [],
           optionsHover = false;
 
-      var label = $select.find('option:selected').html() || !multiple && $select.find('option:first').html() || "";
+      var label = $select.find('option:selected').attr('item-label') || $select.find('option:selected').html() || !multiple && ($select.find('option:first').attr('item-label') || $select.find('option:first').html()) || "";
 
       // Function that renders and appends the option taking into
       // account type and possible image icon.
@@ -675,11 +675,7 @@
       var value = '';
 
       for (var i = 0, count = entriesArray.length; i < count; i++) {
-        if(select.find('option').eq(entriesArray[i]).attr('item-label')){
-            var text = select.find('option').eq(entriesArray[i]).attr('item-label');
-        } else {
-            var text = select.find('option').eq(entriesArray[i]).text();
-        }
+        var text = select.find('option').eq(entriesArray[i]).text();
 
         i === 0 ? value += text : value += ', ' + text;
       }
@@ -688,7 +684,7 @@
         value = select.find('option:disabled').eq(0).text();
       }
 
-      select.siblings('input.select-dropdown').val("value");
+      select.siblings('input.select-dropdown').val(value);
     }
   };
 
