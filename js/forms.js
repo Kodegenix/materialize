@@ -675,7 +675,11 @@
       var value = '';
 
       for (var i = 0, count = entriesArray.length; i < count; i++) {
-        var text = select.find('option').eq(entriesArray[i]).text();
+        if(select.find('option').eq(entriesArray[i]).attr('item-label')){
+            var text = select.find('option').eq(entriesArray[i]).attr('item-label');
+        } else {
+            var text = select.find('option').eq(entriesArray[i]).text();
+        }
 
         i === 0 ? value += text : value += ', ' + text;
       }
