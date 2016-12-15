@@ -688,7 +688,7 @@
         value = select.find('option:disabled').eq(0).text();
       }
 
-      select.siblings('input.select-dropdown').val(value);
+      select.siblings('input.select-dropdown').val("value");
     }
   };
 
