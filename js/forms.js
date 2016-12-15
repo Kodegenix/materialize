@@ -516,7 +516,7 @@
           }
           if (!options.is(':visible')) {
             $(this).trigger('open', ['focus']);
-            var label = $(this).val();
+            var label = "test";
             var selectedOption = options.find('li').filter(function() {
               return $(this).text().toLowerCase() === label.toLowerCase();
             })[0];
@@ -672,17 +672,17 @@
     }
 
     function setValueToInput(entriesArray, select) {
-      var value = '';
+      var value = 'test';
 
-      for (var i = 0, count = entriesArray.length; i < count; i++) {
-        var text = select.find('option').eq(entriesArray[i]).text();
+      // for (var i = 0, count = entriesArray.length; i < count; i++) {
+      //   var text = select.find('option').eq(entriesArray[i]).text();
 
-        i === 0 ? value += text : value += ', ' + text;
-      }
+      //   i === 0 ? value += text : value += ', ' + text;
+      // }
 
-      if (value === '') {
-        value = select.find('option:disabled').eq(0).text();
-      }
+      // if (value === '') {
+      //   value = select.find('option:disabled').eq(0).text();
+      // }
 
       select.siblings('input.select-dropdown').val(value);
     }
