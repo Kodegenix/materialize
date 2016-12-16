@@ -516,7 +516,7 @@
           }
           if (!options.is(':visible')) {
             $(this).trigger('open', ['focus']);
-            var label = "test";
+            var label = $(this).val();
             var selectedOption = options.find('li').filter(function() {
               return $(this).text().toLowerCase() === label.toLowerCase();
             })[0];
