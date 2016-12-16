@@ -396,7 +396,7 @@
           valuesSelected = [],
           optionsHover = false;
 
-      var label = "parampampam";
+      var label = $select.find('option:selected').attr('item-label') || $select.find('option:selected').html() || !multiple && ($select.find('option:first').attr('item-label') || $select.find('option:first').html()) || "";
 
       // Function that renders and appends the option taking into
       // account type and possible image icon.
@@ -672,7 +672,7 @@
     }
 
     function setValueToInput(entriesArray, select) {
-      var value = 'test1';
+      var value = '';
 
       for (var i = 0, count = entriesArray.length; i < count; i++) {
         var text = select.find('option').eq(entriesArray[i]).text();
