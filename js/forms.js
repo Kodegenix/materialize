@@ -396,7 +396,7 @@
           valuesSelected = [],
           optionsHover = false;
 
-      var label = "test";
+      var label = "parampampam";
 
       // Function that renders and appends the option taking into
       // account type and possible image icon.
@@ -672,7 +672,7 @@
     }
 
     function setValueToInput(entriesArray, select) {
-      var value = 'test';
+      var value = 'test1';
 
       for (var i = 0, count = entriesArray.length; i < count; i++) {
         var text = select.find('option').eq(entriesArray[i]).text();
