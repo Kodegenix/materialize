@@ -3282,7 +3282,12 @@ $(document).ready(function(){
             } else {
               options.find('li').removeClass('active');
               $(this).toggleClass('active');
-              $newSelect.val($(this).text());
+              var customLabel = $select.find('option:selected').attr('item-label');
+              if (customLabel){
+                $newSelect.val(customLabel);
+              }else{
+                $newSelect.val($(this).text());
+              } 
             }
 
             activateOption(options, $(this));
