@@ -3282,7 +3282,7 @@ $(document).ready(function(){
             } else {
               options.find('li').removeClass('active');
               $(this).toggleClass('active');
-              $newSelect.val($(this).text());
+              $newSelect.val($(this).attr('item-label') || $(this).text());
             }
 
             activateOption(options, $(this));
@@ -3483,26 +3483,26 @@ $(document).ready(function(){
 
       // use notAdded instead of true (to detect if the option is selected or not)
       select.find('option').eq(entryIndex).prop('selected', notAdded);
-      //setValueToInput(entriesArray, select);
+      setValueToInput(entriesArray, select);
 
       return notAdded;
     }
 
-    // function setValueToInput(entriesArray, select) {
-    //   var value = '';
+    function setValueToInput(entriesArray, select) {
+      var value = '';
 
-    //   for (var i = 0, count = entriesArray.length; i < count; i++) {
-    //     var text = select.find('option').eq(entriesArray[i]).text();
+      for (var i = 0, count = entriesArray.length; i < count; i++) {
+        var text = select.find('option').eq(entriesArray[i]).text();
 
-    //     i === 0 ? value += text : value += ', ' + text;
-    //   }
+        i === 0 ? value += text : value += ', ' + text;
+      }
 
-    //   if (value === '') {
-    //     value = select.find('option:disabled').eq(0).text();
-    //   }
+      if (value === '') {
+        value = select.find('option:disabled').eq(0).text();
+      }
 
-    //   select.siblings('input.select-dropdown').val(value);
-    // }
+      select.siblings('input.select-dropdown').val(value);
+    }
   };
 
 }( jQuery ));
