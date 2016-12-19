@@ -3333,7 +3333,7 @@ $(document).ready(function(){
           }
           if (!options.is(':visible')) {
             $(this).trigger('open', ['focus']);
-            var label = $(this).val();
+            var label = "Test";
             var selectedOption = options.find('li').filter(function() {
               return $(this).text().toLowerCase() === label.toLowerCase();
             })[0];
