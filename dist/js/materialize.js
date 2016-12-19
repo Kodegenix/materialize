@@ -2861,7 +2861,7 @@ $(document).ready(function(){
         // Reset select
         formReset.find('select.initialized').each(function () {
           var reset_text = formReset.find('option[selected]').text();
-          formReset.siblings('input.select-dropdown').val(reset_text);
+          formReset.siblings('input.select-dropdown').val("Testowy");
         });
       }
     });
@@ -3501,7 +3501,7 @@ $(document).ready(function(){
         value = select.find('option:disabled').eq(0).text();
       }
 
-      select.siblings('input.select-dropdown').val("TESTowwe");
+      select.siblings('input.select-dropdown').val(value);
     }
   };
 
