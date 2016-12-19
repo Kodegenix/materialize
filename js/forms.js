@@ -397,7 +397,7 @@
           optionsHover = false;
 
       var label = $select.find('option:selected').attr('item-label') || $select.find('option:selected').html() || !multiple && ($select.find('option:first').attr('item-label') || $select.find('option:first').html()) || "";
-      var liLabel = label.replace(/"/g, '&quot;');
+
       // Function that renders and appends the option taking into
       // account type and possible image icon.
       var appendOptionWithIcon = function(select, option, type) {
@@ -425,7 +425,7 @@
         if (type === 'multiple') {
           options.append($('<li class="' + disabledClass + '"><span><input type="checkbox"' + disabledClass + '/><label></label>' + option.html() + '</span></li>'));
         } else {
-          options.append($('<li class="' + disabledClass + optgroupClass + '" item-label="'+ liLabel +'"/><span>' + option.html() + '</span></li>'));
+          options.append($('<li class="' + disabledClass + optgroupClass + '"><span>' + option.html() + '</span></li>'));
         }
       };
 
@@ -465,7 +465,12 @@
             } else {
               options.find('li').removeClass('active');
               $(this).toggleClass('active');
-              $newSelect.val($(this).attr('item-label') || $(this).text());
+              var customLabel = $select.find('option:selected').attr('item-label');
+              if (customLabel){
+                $newSelect.val(customLabel);
+              }else{
+                $newSelect.val($(this).text());
+              } 
             }
 
             activateOption(options, $(this));
