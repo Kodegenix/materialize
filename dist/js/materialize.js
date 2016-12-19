@@ -3333,7 +3333,7 @@ $(document).ready(function(){
           }
           if (!options.is(':visible')) {
             $(this).trigger('open', ['focus']);
-            var label = "Test";
+            var label = $(this).val();
             var selectedOption = options.find('li').filter(function() {
               return $(this).text().toLowerCase() === label.toLowerCase();
             })[0];
@@ -3501,7 +3501,7 @@ $(document).ready(function(){
         value = select.find('option:disabled').eq(0).text();
       }
 
-      select.siblings('input.select-dropdown').val(value);
+      select.siblings('input.select-dropdown').val("TESTowwe");
     }
   };
 
