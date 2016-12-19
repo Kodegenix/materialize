@@ -44,7 +44,7 @@
         // Reset select
         formReset.find('select.initialized').each(function () {
           var reset_text = formReset.find('option[selected]').text();
-          formReset.siblings('input.select-dropdown').val("Testowy");
+          formReset.siblings('input.select-dropdown').val(reset_text);
         });
       }
     });
@@ -516,7 +516,7 @@
           }
           if (!options.is(':visible')) {
             $(this).trigger('open', ['focus']);
-            var label = $(this).val();
+            var label = $(this).attr('item-label');
             var selectedOption = options.find('li').filter(function() {
               return $(this).text().toLowerCase() === label.toLowerCase();
             })[0];
@@ -675,13 +675,13 @@
       var value = '';
 
       for (var i = 0, count = entriesArray.length; i < count; i++) {
-        var text = select.find('option').eq(entriesArray[i]).text();
+        var text = select.find('option').eq(entriesArray[i]).attr('item-label');
 
         i === 0 ? value += text : value += ', ' + text;
       }
 
       if (value === '') {
-        value = select.find('option:disabled').eq(0).text();
+        value = select.find('option:disabled').eq(0).attr('item-label');
       }
 
       select.siblings('input.select-dropdown').val(value);
