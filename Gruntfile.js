@@ -10,7 +10,7 @@ module.exports = function(grunt) {
     //  Jasmine
     jasmine: {
       components: {
-	src: [
+        src: [
           'bin/materialize.js'
         ],
         options: {
@@ -158,6 +158,7 @@ module.exports = function(grunt) {
           "js/date_picker/picker.date.js",
           "js/character_counter.js",
           "js/carousel.js",
+          "js/tapTarget.js",
         ],
         // the location of the resulting JS file
         dest: 'dist/js/materialize.js'
@@ -195,6 +196,7 @@ module.exports = function(grunt) {
           "js/date_picker/picker.date.js",
           "js/character_counter.js",
           "js/carousel.js",
+          "js/tapTarget.js",
         ],
         // the location of the resulting JS file
         dest: 'temp/js/materialize.js'
@@ -281,6 +283,7 @@ module.exports = function(grunt) {
             "date_picker/picker.date.js",
             "character_counter.js",
             "carousel.js",
+            "tapTarget.js",
           ], dest: 'materialize-src/js/'},
           {expand: true, cwd: 'dist/js/', src: ['**/*'], dest: 'materialize-src/js/bin/'},
           {expand: true, cwd: './', src: ['LICENSE', 'README.md'], dest: 'materialize-src/'}
@@ -376,8 +379,12 @@ module.exports = function(grunt) {
           "fullscreen-slider-demo.html": "jade/fullscreen-slider-demo.jade",
           "pagination.html": "jade/pagination.jade",
           "breadcrumbs.html": "jade/breadcrumbs.jade",
-          "carousel.html": "jade/carousel.jade"
-
+          "carousel.html": "jade/carousel.jade",
+          "feature-discovery.html": "jade/feature-discovery.jade",
+          "pulse.html": "jade/pulse.jade",
+          "pushpin-demo.html": "jade/pushpin-demo.jade",
+          "css-transitions.html": "jade/css-transitions.jade",
+          "404.html": "jade/404.jade",
 
         }
       }
