@@ -669,9 +669,9 @@
           collection.find('li.selected').removeClass('selected');
           var option = $(newOption);
           option.addClass('selected');
-          if (!multiple || !!firstActivation) {
-            options.scrollTo(option);
-          }
+          // if (!multiple || !!firstActivation) {
+          //   options.scrollTo(option);
+          // }
         }
       };
 
