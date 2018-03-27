@@ -1,6 +1,11 @@
 /*!
+<<<<<<< HEAD
  * Materialize v0.98.0 (http://materializecss.com)
  * Copyright 2014-2015 Materialize
+=======
+ * Materialize v0.100.1 (http://materializecss.com)
+ * Copyright 2014-2017 Materialize
+>>>>>>> 7fef55a9... #6
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
 // Check for jQuery.
@@ -3467,11 +3472,19 @@ if (jQuery) {
               options.find('li').removeClass('active');
               $(this).toggleClass('active');
               var customLabel = $select.find('option:selected').attr('item-label');
+<<<<<<< HEAD
               if (customLabel){
                 $newSelect.val(customLabel);
               }else{
                 $newSelect.val($(this).text());
               } 
+=======
+              if (customLabel) {
+                $newSelect.val(customLabel);
+              } else {
+                $newSelect.val($(this).text());
+              }
+>>>>>>> 7fef55a9... #6
             }
 
             activateOption(options, $(this));
@@ -3495,10 +3508,15 @@ if (jQuery) {
       // escape double quotes
       var sanitizedLabelHtml = label.replace(/"/g, '&quot;');
 
+<<<<<<< HEAD
       // check if ellipsis attribute is used
       var ellipsis = $select.attr("ellipsis") !== undefined ;
 
       var $newSelect = $('<input type="text" class="select-dropdown" readonly="true" '+ ( ellipsis ? ' style="text-overflow:ellipsis" ' : '' ) +  (($select.is(':disabled')) ? 'disabled' : '') + ' data-activates="select-options-' + uniqueID +'" value="'+ sanitizedLabelHtml +'"/>');
+=======
+      var ellipsis = $select.attr("ellipsis") !== undefined;
+      var $newSelect = $('<input type="text" class="select-dropdown" readonly="true" ' + (ellipsis ? ' style="text-overflow:ellipsis" ' : '') + ($select.is(':disabled') ? 'disabled' : '') + ' data-activates="select-options-' + uniqueID + '" value="' + sanitizedLabelHtml + '"/>');
+>>>>>>> 7fef55a9... #6
       $select.before($newSelect);
       $newSelect.before(dropdownIcon);
 

@@ -1,6 +1,11 @@
 /*!
+<<<<<<< HEAD
  * Materialize v0.98.0 (http://materializecss.com)
  * Copyright 2014-2015 Materialize
+=======
+ * Materialize v0.100.1 (http://materializecss.com)
+ * Copyright 2014-2017 Materialize
+>>>>>>> 7fef55a9... #6
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
 .materialize-red {
@@ -2922,7 +2927,8 @@ thead {
   border-bottom: 1px solid #d0d0d0;
 }
 
-td, th {
+td,
+th {
   padding: 15px 5px;
   display: table-cell;
   text-align: left;
@@ -4934,7 +4940,7 @@ small {
 .btn-large:disabled,
 .btn-flat:disabled,
 .btn[disabled],
-[disabled].btn-large,
+.btn-large[disabled],
 .btn-floating[disabled],
 .btn-large[disabled],
 .btn-flat[disabled] {
@@ -4955,7 +4961,7 @@ small {
 .btn-large:disabled:hover,
 .btn-flat:disabled:hover,
 .btn[disabled]:hover,
-[disabled].btn-large:hover,
+.btn-large[disabled]:hover,
 .btn-floating[disabled]:hover,
 .btn-large[disabled]:hover,
 .btn-flat[disabled]:hover {
@@ -5729,8 +5735,15 @@ label {
   /* Firefox 19+ */
   color: #d1d1d1;
 }
+<<<<<<< HEAD
 
 :-ms-input-placeholder {
+=======
+::-ms-input-placeholder {
+  color: #d1d1d1;
+}
+::placeholder {
+>>>>>>> 7fef55a9... #6
   color: #d1d1d1;
 }
 
@@ -5854,6 +5867,7 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
   color: #26a69a;
 }
 
+<<<<<<< HEAD
 input:not([type]).valid, input:not([type]):focus.valid,
 input[type=text].valid,
 input[type=text]:focus.valid,
@@ -5877,10 +5891,145 @@ input[type=number].valid,
 input[type=number]:focus.valid,
 input[type=search].valid,
 input[type=search]:focus.valid,
+=======
+input:not([type]).validate + label,
+input[type=text]:not(.browser-default).validate + label,
+input[type=password]:not(.browser-default).validate + label,
+input[type=email]:not(.browser-default).validate + label,
+input[type=url]:not(.browser-default).validate + label,
+input[type=time]:not(.browser-default).validate + label,
+input[type=date]:not(.browser-default).validate + label,
+input[type=datetime]:not(.browser-default).validate + label,
+input[type=datetime-local]:not(.browser-default).validate + label,
+input[type=tel]:not(.browser-default).validate + label,
+input[type=number]:not(.browser-default).validate + label,
+input[type=search]:not(.browser-default).validate + label,
+textarea.materialize-textarea.validate + label {
+  width: 100%;
+}
+
+input:not([type]).invalid + label:after,
+input:not([type]).valid + label:after,
+input[type=text]:not(.browser-default).invalid + label:after,
+input[type=text]:not(.browser-default).valid + label:after,
+input[type=password]:not(.browser-default).invalid + label:after,
+input[type=password]:not(.browser-default).valid + label:after,
+input[type=email]:not(.browser-default).invalid + label:after,
+input[type=email]:not(.browser-default).valid + label:after,
+input[type=url]:not(.browser-default).invalid + label:after,
+input[type=url]:not(.browser-default).valid + label:after,
+input[type=time]:not(.browser-default).invalid + label:after,
+input[type=time]:not(.browser-default).valid + label:after,
+input[type=date]:not(.browser-default).invalid + label:after,
+input[type=date]:not(.browser-default).valid + label:after,
+input[type=datetime]:not(.browser-default).invalid + label:after,
+input[type=datetime]:not(.browser-default).valid + label:after,
+input[type=datetime-local]:not(.browser-default).invalid + label:after,
+input[type=datetime-local]:not(.browser-default).valid + label:after,
+input[type=tel]:not(.browser-default).invalid + label:after,
+input[type=tel]:not(.browser-default).valid + label:after,
+input[type=number]:not(.browser-default).invalid + label:after,
+input[type=number]:not(.browser-default).valid + label:after,
+input[type=search]:not(.browser-default).invalid + label:after,
+input[type=search]:not(.browser-default).valid + label:after,
+textarea.materialize-textarea.invalid + label:after,
+textarea.materialize-textarea.valid + label:after {
+  display: none;
+}
+
+input:not([type]).invalid + label.active:after,
+input:not([type]).valid + label.active:after,
+input[type=text]:not(.browser-default).invalid + label.active:after,
+input[type=text]:not(.browser-default).valid + label.active:after,
+input[type=password]:not(.browser-default).invalid + label.active:after,
+input[type=password]:not(.browser-default).valid + label.active:after,
+input[type=email]:not(.browser-default).invalid + label.active:after,
+input[type=email]:not(.browser-default).valid + label.active:after,
+input[type=url]:not(.browser-default).invalid + label.active:after,
+input[type=url]:not(.browser-default).valid + label.active:after,
+input[type=time]:not(.browser-default).invalid + label.active:after,
+input[type=time]:not(.browser-default).valid + label.active:after,
+input[type=date]:not(.browser-default).invalid + label.active:after,
+input[type=date]:not(.browser-default).valid + label.active:after,
+input[type=datetime]:not(.browser-default).invalid + label.active:after,
+input[type=datetime]:not(.browser-default).valid + label.active:after,
+input[type=datetime-local]:not(.browser-default).invalid + label.active:after,
+input[type=datetime-local]:not(.browser-default).valid + label.active:after,
+input[type=tel]:not(.browser-default).invalid + label.active:after,
+input[type=tel]:not(.browser-default).valid + label.active:after,
+input[type=number]:not(.browser-default).invalid + label.active:after,
+input[type=number]:not(.browser-default).valid + label.active:after,
+input[type=search]:not(.browser-default).invalid + label.active:after,
+input[type=search]:not(.browser-default).valid + label.active:after,
+textarea.materialize-textarea.invalid + label.active:after,
+textarea.materialize-textarea.valid + label.active:after {
+  display: block;
+}
+
+/* Validation Sass Placeholders */
+input.valid:not([type]), input.valid:not([type]):focus,
+input.valid[type=text]:not(.browser-default),
+input.valid[type=text]:not(.browser-default):focus,
+input.valid[type=password]:not(.browser-default),
+input.valid[type=password]:not(.browser-default):focus,
+input.valid[type=email]:not(.browser-default),
+input.valid[type=email]:not(.browser-default):focus,
+input.valid[type=url]:not(.browser-default),
+input.valid[type=url]:not(.browser-default):focus,
+input.valid[type=time]:not(.browser-default),
+input.valid[type=time]:not(.browser-default):focus,
+input.valid[type=date]:not(.browser-default),
+input.valid[type=date]:not(.browser-default):focus,
+input.valid[type=datetime]:not(.browser-default),
+input.valid[type=datetime]:not(.browser-default):focus,
+input.valid[type=datetime-local]:not(.browser-default),
+input.valid[type=datetime-local]:not(.browser-default):focus,
+input.valid[type=tel]:not(.browser-default),
+input.valid[type=tel]:not(.browser-default):focus,
+input.valid[type=number]:not(.browser-default),
+input.valid[type=number]:not(.browser-default):focus,
+input.valid[type=search]:not(.browser-default),
+input.valid[type=search]:not(.browser-default):focus,
+>>>>>>> 7fef55a9... #6
 textarea.materialize-textarea.valid,
 textarea.materialize-textarea:focus.valid {
   border-bottom: 1px solid #4CAF50;
+<<<<<<< HEAD
   box-shadow: 0 1px 0 0 #4CAF50;
+=======
+  -webkit-box-shadow: 0 1px 0 0 #4CAF50;
+          box-shadow: 0 1px 0 0 #4CAF50;
+}
+
+input.invalid:not([type]), input.invalid:not([type]):focus,
+input.invalid[type=text]:not(.browser-default),
+input.invalid[type=text]:not(.browser-default):focus,
+input.invalid[type=password]:not(.browser-default),
+input.invalid[type=password]:not(.browser-default):focus,
+input.invalid[type=email]:not(.browser-default),
+input.invalid[type=email]:not(.browser-default):focus,
+input.invalid[type=url]:not(.browser-default),
+input.invalid[type=url]:not(.browser-default):focus,
+input.invalid[type=time]:not(.browser-default),
+input.invalid[type=time]:not(.browser-default):focus,
+input.invalid[type=date]:not(.browser-default),
+input.invalid[type=date]:not(.browser-default):focus,
+input.invalid[type=datetime]:not(.browser-default),
+input.invalid[type=datetime]:not(.browser-default):focus,
+input.invalid[type=datetime-local]:not(.browser-default),
+input.invalid[type=datetime-local]:not(.browser-default):focus,
+input.invalid[type=tel]:not(.browser-default),
+input.invalid[type=tel]:not(.browser-default):focus,
+input.invalid[type=number]:not(.browser-default),
+input.invalid[type=number]:not(.browser-default):focus,
+input.invalid[type=search]:not(.browser-default),
+input.invalid[type=search]:not(.browser-default):focus,
+textarea.materialize-textarea.invalid,
+textarea.materialize-textarea.invalid:focus, .select-wrapper.invalid > input.select-dropdown {
+  border-bottom: 1px solid #F44336;
+  -webkit-box-shadow: 0 1px 0 0 #F44336;
+          box-shadow: 0 1px 0 0 #F44336;
+>>>>>>> 7fef55a9... #6
 }
 
 input:not([type]).valid + label:after,
@@ -7119,7 +7268,7 @@ input[type=range]:focus::-ms-fill-upper {
     -webkit-transform: translateX(105%);
             transform: translateX(105%);
   }
-  .side-nav a {
+  .side-nav > a {
     padding: 0 16px;
   }
   .side-nav .userView {
@@ -7877,9 +8026,16 @@ input[type=range]:focus::-ms-fill-upper {
   visibility: visible;
   -webkit-animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
           animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+<<<<<<< HEAD
   transition: opacity .3s, visibility 0s 1s, -webkit-transform .3s;
   transition: opacity .3s, transform .3s, visibility 0s 1s;
   transition: opacity .3s, transform .3s, visibility 0s 1s, -webkit-transform .3s;
+=======
+  -webkit-transition: opacity .3s, visibility 0s 1s, -webkit-transform .3s;
+  transition: opacity .3s, visibility 0s 1s, -webkit-transform .3s;
+  transition: opacity .3s, transform .3s, visibility 0s 1s;
+  transition: opacity .3s, transform .3s, visibility 0s 1s, -webkit-transform .3s;
+>>>>>>> 7fef55a9... #6
 }
 
 .tap-target {
@@ -7936,9 +8092,16 @@ input[type=range]:focus::-ms-fill-upper {
 
 .tap-target-wave::after {
   visibility: hidden;
+<<<<<<< HEAD
   transition: opacity .3s, visibility 0s, -webkit-transform .3s;
   transition: opacity .3s, transform .3s, visibility 0s;
   transition: opacity .3s, transform .3s, visibility 0s, -webkit-transform .3s;
+=======
+  -webkit-transition: opacity .3s, visibility 0s, -webkit-transform .3s;
+  transition: opacity .3s, visibility 0s, -webkit-transform .3s;
+  transition: opacity .3s, transform .3s, visibility 0s;
+  transition: opacity .3s, transform .3s, visibility 0s, -webkit-transform .3s;
+>>>>>>> 7fef55a9... #6
   z-index: -1;
 }
 
