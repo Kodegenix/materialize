@@ -4640,6 +4640,7 @@ $jscomp.polyfill = function (e, r, p, m) {
       key: "_handleMouseEnter",
       value: function _handleMouseEnter() {
         this.isHovered = true;
+        this.isFocused = false; // Allows close of tooltip when opened by focus.
         this.open();
       }
     }, {
