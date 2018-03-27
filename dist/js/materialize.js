@@ -1,5 +1,5 @@
 /*!
- * Materialize v0.100.2 (http://materializecss.com)
+ * Materialize v0.100.1 (http://materializecss.com)
  * Copyright 2014-2017 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
@@ -4859,7 +4859,7 @@ if (Vel) {
           valuesSelected = [],
           optionsHover = false;
 
-      var label = $select.find('option:selected').html() || $select.find('option:first').html() || "";
+      var label = $select.find('option:selected').attr('item-label') || $select.find('option:selected').html() || !multiple && ($select.find('option:first').attr('item-label') || $select.find('option:first').html()) || "";
 
       // Function that renders and appends the option taking into
       // account type and possible image icon.
@@ -4922,7 +4922,12 @@ if (Vel) {
             } else {
               options.find('li').removeClass('active');
               $(this).toggleClass('active');
-              $newSelect.val($(this).text());
+              var customLabel = $select.find('option:selected').attr('item-label');
+              if (customLabel) {
+                $newSelect.val(customLabel);
+              } else {
+                $newSelect.val($(this).text());
+              }
             }
 
             activateOption(options, $(this));
@@ -4944,7 +4949,8 @@ if (Vel) {
       // escape double quotes
       var sanitizedLabelHtml = label.replace(/"/g, '&quot;');
 
-      var $newSelect = $('<input type="text" class="select-dropdown" readonly="true" ' + ($select.is(':disabled') ? 'disabled' : '') + ' data-activates="select-options-' + uniqueID + '" value="' + sanitizedLabelHtml + '"/>');
+      var ellipsis = $select.attr("ellipsis") !== undefined;
+      var $newSelect = $('<input type="text" class="select-dropdown" readonly="true" ' + (ellipsis ? ' style="text-overflow:ellipsis" ' : '') + ($select.is(':disabled') ? 'disabled' : '') + ' data-activates="select-options-' + uniqueID + '" value="' + sanitizedLabelHtml + '"/>');
       $select.before($newSelect);
       $newSelect.before(dropdownIcon);
 
